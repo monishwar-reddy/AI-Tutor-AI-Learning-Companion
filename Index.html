@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiro Tutor – Learn Smarter with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-glow': 'pulseGlow 2s infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen transition-colors duration-300">
+    <!-- Dark Mode Toggle -->
+    <div class="absolute top-6 right-6 z-10">
+        <button id="darkModeToggle"
+            class="p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+            <svg class="w-6 h-6 text-gray-800 dark:text-yellow-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path class="dark:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="container mx-auto px-6 py-12 min-h-screen flex items-center justify-center">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Hero Section -->
+            <div class="animate-fade-in">
+                <!-- Kiro Logo/Icon -->
+                <div class="mb-8">
+                    <div
+                        class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg animate-pulse-glow">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 animate-slide-up">
+                    <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">AI
+                        Tutor</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-4 animate-slide-up"
+                    style="animation-delay: 0.2s">
+                    Learn Smarter with AI
+                </h2>
+
+                <!-- Tagline -->
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up"
+                    style="animation-delay: 0.4s">
+                    Paste your code, problem, or text → get step-by-step explanations instantly.<br>
+                    <span class="text-blue-600 dark:text-blue-400 font-medium">"build" by Monishwar Reddy</span>
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12 animate-slide-up" style="animation-delay: 0.6s">
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Code Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Get detailed explanations of your code with line-by-line
+                        breakdowns</p>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Problem Solving</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Step-by-step solutions to complex programming challenges
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Instant Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">No waiting – get explanations in seconds, not minutes
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="animate-slide-up" style="animation-delay: 0.8s">
+                <button id="startLearningBtn"
+                    class="inline-flex items-center px-8 py-4 text-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 animate-pulse-glow">
+                    🚀 Start Learning
+                    <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-16 text-center animate-fade-in" style="animation-delay: 1s">
+                <p class="text-gray-500 dark:text-gray-400">
+                    Built with ❤️  
+                </p>
+            </div>
+        </div>
+    </div>
+    <! -- Main App Page (Hidden Initially) -->
+        <div id="appPage" class="hidden min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+            <!-- Header -->
+            <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo and Title -->
+                        <div class="flex items-center space-x-3">
+                            <div
+                                class="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h1 class="text-xl font-bold text-gray-900 dark:text-white">AI Tutor</h1>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">AI Learning Companion</p>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="flex items-center space-x-4">
+                            <button id="backToHomeBtn"
+    class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+    ← Back to Home
+</button>
+
+                            <button id="darkModeToggleApp"
+                                class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                                <svg class="w-5 h-5 text-gray-600 dark:text-yellow-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path class="dark:hidden" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                                    </path>
+                                    <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Input Section -->
+                    <div class="space-y-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                            <div class="flex items-center space-x-2 mb-4">
+                                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                    </path>
+                                </svg>
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Input Your Content</h2>
+                            </div>
+
+                            <textarea id="inputText" placeholder="Paste your code, problem, or any text you want explained here...
+
+Examples:
+• JavaScript function you don't understand
+• Math problem you're stuck on  
+• Concept you want to learn about
+• Code snippet that's confusing you
+
+Try pasting: function fibonacci(n) { return n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2); }"
+                                class="w-full h-64 p-4 border border-gray-300 dark:border-gray-600 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"></textarea>
+
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex space-x-2">
+                                    <button id="clearBtn"
+                                        class="px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
+                                        Clear
+                                    </button>
+                                    <button id="exampleBtn"
+                                        class="px-4 py-2 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 transition-colors">
+                                        Load Example
+                                    </button>
+                                </div>
+
+                                <button id="explainBtn"
+                                    class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                                    <span class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                        <span id="btnText">Explain with AI</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Examples -->
+                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Examples</h3>
+                            <div class="grid gap-3">
+                                <button
+                                    class="example-btn text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                                    data-example="javascript">
+                                    <div class="font-medium text-gray-900 dark:text-white">JavaScript Function</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Recursive fibonacci
+                                        implementation</div>
+                                </button>
+                                <button
+                                    class="example-btn text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                                    data-example="python">
+                                    <div class="font-medium text-gray-900 dark:text-white">Python Algorithm</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">Binary search implementation
+                                    </div>
+                                </button>
+                                <button
+                                    class="example-btn text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                                    data-example="concept">
+                                    <div class="font-medium text-gray-900 dark:text-white">Programming Concept</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">What are closures in
+                                        JavaScript?</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Section -->
+                    <div class="space-y-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 min-h-96">
+                            <div class="flex items-center space-x-2 mb-4">
+                                <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Explanation</h2>
+                            </div>
+
+                            <div id="outputArea" class="prose dark:prose-invert max-w-none">
+                                <div class="text-center py-12 text-gray-500 dark:text-gray-400">
+                                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-lg">Ready to help you learn!</p>
+                                    <p class="text-sm mt-2">Paste your content and click "Explain with AI" to get
+                                        started.</p>
+                                </div>
+                            </div>
+
+                            <!-- Loading State -->
+                            <div id="loadingState" class="hidden text-center py-12">
+                                <div class="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400">
+                                    <svg class="animate-spin w-6 h-6" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                            stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                        </path>
+                                    </svg>
+                                    <span class="text-lg font-medium">Thinking</span>
+                                    <span class="animate-typing">...</span>
+                                </div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Analyzing your content and
+                                    preparing explanation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script>
+            // Smart AI Analysis Function
+            function analyzeContent(content) {
+                const lowerContent = content.toLowerCase();
+
+                // FIRST: Check if it's a math problem (highest priority)
+                if (isMathProblem(content)) {
+                    // Create math-specific analysis
+                    const mathAnalysis = {
+                        title: "Math Problem Solution",
+                        sections: [{
+                            type: 'overview',
+                            title: '🔍 Math Analysis',
+                            content: 'I\'ve detected a mathematical problem. Let me solve it step by step.'
+                        }, {
+                            type: 'breakdown',
+                            title: '🧮 Solution',
+                            content: solveMathProblem(content)
+                        }, {
+                            type: 'learning',
+                            title: '🎓 Math Tips',
+                            content: getMathTips(content)
+                        }]
+                    };
+                    return mathAnalysis;
+                }
+
+                // Detect programming language
+                let language = 'general';
+                if (content.includes('function') || content.includes('=>') || content.includes('const') || content.includes('let') || content.includes('var')) {
+                    language = 'javascript';
+                } else if (content.includes('def ') || content.includes('import ') || content.includes('print(') || content.includes('if __name__')) {
+                    language = 'python';
+                } else if (content.includes('#include') || content.includes('int main') || content.includes('cout') || content.includes('printf')) {
+                    language = 'cpp';
+                } else if (content.includes('public class') || content.includes('System.out') || content.includes('public static')) {
+                    language = 'java';
+                }
+
+                // Detect code patterns (more specific now)
+                const patterns = {
+                    recursion: /function\s+fibonacci|def\s+fibonacci|fibonacci\s*\(|factorial\s*\(|recursive.*function|return.*fibonacci\(.*-1\)|return.*fibonacci\(.*-2\)/i,
+                    loop: /for\s*\(|while\s*\(|for.*in|range\(/i,
+                    array: /\[\]|\[.*\]|array|list|append|push|pop/i,
+                    function: /function|def |=>/i,
+                    conditional: /if\s*\(|else|elif|switch|case/i,
+                    class: /class |public class|private|protected/i,
+                    algorithm: /sort|search|binary|linear|tree|graph|hash/i
+                };
+
+                // Generate dynamic explanation
+                return generateExplanation(content, language, patterns);
+            }
+
+            function getBasicAnalysis(content, language) {
+                const lines = content.split('\n').length;
+                const words = content.split(/\s+/).length;
+
+                if (language === 'javascript') {
+                    return `I've detected JavaScript code with ${lines} lines. This appears to be ${getCodeType(content)} that uses JavaScript syntax and conventions.`;
+                } else if (language === 'python') {
+                    return `I've detected Python code with ${lines} lines. This appears to be ${getCodeType(content)} that follows Python syntax and indentation rules.`;
+                } else if (language === 'cpp') {
+                    return `I've detected C++ code with ${lines} lines. This appears to be ${getCodeType(content)} using C++ syntax and libraries.`;
+                } else if (language === 'java') {
+                    return `I've detected Java code with ${lines} lines. This appears to be ${getCodeType(content)} following Java object-oriented principles.`;
+                } else {
+                    // Check if it looks like code at all
+                    if (content.includes('{') || content.includes('(') || content.includes('=') || content.includes(';')) {
+                        return `I've detected what appears to be programming code with ${lines} lines. Let me analyze its structure and provide insights.`;
+                    } else {
+                        return `I've analyzed your text content with ${lines} lines. Let me break down what I found and provide helpful insights.`;
+                    }
+                }
+            }
+
+            function getCodeType(content) {
+                if (content.includes('class ')) return 'a class definition';
+                if (content.includes('function') || content.includes('def ')) return 'a function definition';
+                if (content.includes('for') || content.includes('while')) return 'code with loops';
+                if (content.includes('if')) return 'conditional logic';
+                if (content.includes('import') || content.includes('#include')) return 'code with imports/includes';
+                return 'a code snippet';
+            }
+
+            function getGeneralCodeAnalysis(content, language) {
+                const analysis = [];
+                const trimmedContent = content.trim().toLowerCase();
+
+                // Handle different types of non-code content
+                if (language === 'general') {
+                    // Check if it's a math problem
+                    if (isMathProblem(content)) {
+                        return solveMathProblem(content);
+                    }
+
+                    // Check if it's a single word or short phrase
+                    if (trimmedContent.split(/\s+/).length <= 3) {
+                        return analyzeWord(trimmedContent);
+                    }
+
+                    // Check if it's a question
+                    if (trimmedContent.includes('what') || trimmedContent.includes('how') || trimmedContent.includes('why') || trimmedContent.includes('when') || trimmedContent.includes('where') || trimmedContent.includes('?')) {
+                        return analyzeQuestion(content);
+                    }
+
+                    // Check if it's asking for explanation or definition
+                    if (trimmedContent.includes('explain') || trimmedContent.includes('define') || trimmedContent.includes('meaning') || trimmedContent.includes('tell me about')) {
+                        return analyzeExplanationRequest(content);
+                    }
+
+                    // Check if it's a concept or topic
+                    if (isConceptOrTopic(trimmedContent)) {
+                        return analyzeConcept(content);
+                    }
+
+                    // General text analysis
+                    return analyzeGeneralText(content);
+                }
+
+                // Code analysis (existing logic)
+                if (content.includes('=') && !content.includes('==') && !content.includes('!=')) {
+                    analysis.push('Variable assignments detected - storing values in memory');
+                }
+
+                if (content.includes('(') && content.includes(')')) {
+                    analysis.push('Function calls found - executing reusable code blocks');
+                }
+
+                if (content.includes('+') || content.includes('-') || content.includes('*') || content.includes('/')) {
+                    analysis.push('Mathematical operations present - performing calculations');
+                }
+
+                if (content.includes('"') || content.includes("'") || content.includes('`')) {
+                    analysis.push('String literals found - working with text data');
+                }
+
+                if (content.includes('//') || content.includes('#') || content.includes('/*')) {
+                    analysis.push('Comments included - good documentation practice');
+                }
+
+                if (analysis.length === 0) {
+                    return `This ${language} code contains basic syntax elements that I can help explain step by step.`;
+                }
+
+                return analysis.join('. ') + '.';
+            }
+
+            function analyzeWord(word) {
+                // Comprehensive dictionary of terms and explanations
+                const termExplanations = {
+                    // Medical/Health
+                    'neurologist': 'A medical doctor who specializes in diagnosing and treating disorders of the nervous system, including the brain, spinal cord, and nerves.',
+                    'cardiologist': 'A medical doctor who specializes in heart and cardiovascular system disorders.',
+                    'psychiatrist': 'A medical doctor who specializes in mental health disorders and can prescribe medications.',
+                    'surgeon': 'A medical doctor who performs operations to treat diseases, injuries, or deformities.',
+
+                    // Programming/Tech
+                    'algorithm': 'A step-by-step procedure or formula for solving a problem, commonly used in programming and mathematics.',
+                    'function': 'In programming, a reusable block of code that performs a specific task and can accept inputs (parameters) and return outputs.',
+                    'variable': 'A storage location in programming that holds data which can be modified during program execution.',
+                    'loop': 'A programming construct that repeats a block of code multiple times until a certain condition is met.',
+                    'array': 'A data structure that stores multiple values in a single variable, typically of the same type.',
+                    'recursion': 'A programming technique where a function calls itself to solve smaller instances of the same problem.',
+                    'database': 'An organized collection of structured information or data, typically stored electronically in a computer system.',
+                    'api': 'Application Programming Interface - a set of protocols and tools for building software applications.',
+                    'javascript': 'A high-level, interpreted programming language commonly used for web development and creating interactive websites.',
+                    'python': 'A high-level, interpreted programming language known for its simplicity, readability, and versatility in data science, web development, and AI.',
+                    'html': 'HyperText Markup Language - the standard markup language for creating web pages and web applications.',
+                    'css': 'Cascading Style Sheets - a language used to describe the presentation and styling of HTML documents.',
+
+                    // Science/Math/Physics
+                    'physics': 'The science that studies matter, energy, motion, and forces. It explains how the universe works from subatomic particles to galaxies, covering mechanics, thermodynamics, electromagnetism, quantum mechanics, and relativity.',
+                    'chemistry': 'The science that studies the composition, structure, properties, and reactions of matter at the atomic and molecular level.',
+                    'biology': 'The science of life and living organisms, including their structure, function, growth, evolution, distribution, and taxonomy.',
+                    'astronomy': 'The scientific study of celestial objects, space, and the universe as a whole, including stars, planets, galaxies, and cosmic phenomena.',
+                    'quantum': 'Quantum mechanics describes the behavior of matter and energy at the atomic and subatomic level, where particles can exist in multiple states simultaneously.',
+                    'relativity': 'Einstein\'s theory explaining how space and time are interconnected and how gravity affects them. It revolutionized our understanding of the universe.',
+                    'thermodynamics': 'The branch of physics dealing with heat, temperature, energy transfer, and the relationship between different forms of energy.',
+                    'electromagnetism': 'The study of electric and magnetic fields and their interactions, fundamental to understanding light, radio waves, and electrical devices.',
+                    'photosynthesis': 'The process by which plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of sugar.',
+                    'gravity': 'A fundamental force of attraction between objects with mass, keeping us grounded on Earth and governing planetary motion.',
+                    'evolution': 'The process by which different kinds of living organisms develop and diversify from earlier forms through natural selection.',
+                    'atom': 'The basic unit of matter, consisting of protons, neutrons, and electrons, forming the building blocks of all elements.',
+                    'molecule': 'A group of atoms bonded together, representing the smallest fundamental unit of a chemical compound.',
+                    'dna': 'Deoxyribonucleic acid - the molecule that carries genetic instructions for the development and function of all known living organisms.',
+                    'ecosystem': 'A biological community of interacting organisms and their physical environment, functioning as a system.',
+                    'calculus': 'A branch of mathematics dealing with rates of change (derivatives) and accumulation (integrals), fundamental to physics and engineering.',
+                    'algebra': 'A branch of mathematics dealing with symbols and the rules for manipulating those symbols to solve equations.',
+                    'geometry': 'A branch of mathematics concerned with shapes, sizes, positions, angles, and dimensions in space.',
+                    'statistics': 'The science of collecting, analyzing, interpreting, and presenting data to make informed decisions.',
+
+                    // AI/ML
+                    'ai': 'Artificial Intelligence - computer systems able to perform tasks that typically require human intelligence.',
+                    'machinelearning': 'A subset of AI that enables computers to learn and improve from experience without being explicitly programmed.',
+                    'neuralnetwork': 'A computing system inspired by biological neural networks, used in machine learning.',
+                    'deeplearning': 'A subset of machine learning using neural networks with multiple layers to model complex patterns.',
+
+                    // Business/Finance
+                    'entrepreneur': 'A person who starts and runs a business, taking on financial risks in hope of profit.',
+                    'investment': 'The action of putting money into financial schemes, shares, or property with the expectation of profit.',
+                    'marketing': 'The activity of promoting and selling products or services, including market research and advertising.',
+                    'economics': 'The social science that studies the production, distribution, and consumption of goods and services.',
+
+                    // Social Sciences & Humanities
+                    'democracy': 'A system of government where citizens exercise power by voting and electing representatives.',
+                    'philosophy': 'The study of fundamental questions about existence, knowledge, values, reason, and reality.',
+                    'psychology': 'The scientific study of mind and behavior, including conscious and unconscious phenomena, emotions, and mental processes.',
+                    'sociology': 'The study of society, social relationships, social behavior, and the development of human societies.',
+                    'anthropology': 'The study of humans, human behavior, and societies in the past and present, including cultural and biological aspects.',
+                    'history': 'The study of past events, particularly in human affairs, and their impact on the present and future.',
+                    'geography': 'The study of Earth\'s landscapes, peoples, places, and environments, including physical and human geography.',
+                    'literature': 'Written works, especially those considered to have artistic or intellectual value, including novels, poetry, and drama.',
+                    'art': 'The expression of human creative skill and imagination, including painting, sculpture, music, and other visual or performing arts.',
+                    'music': 'The art of combining sounds in time to produce beauty of form, harmony, and expression of emotion.',
+                    'linguistics': 'The scientific study of language, including its structure, evolution, and relationship to mind and society.',
+                    
+                    // World Knowledge & Culture
+                    'renaissance': 'A period of European cultural, artistic, political, and economic rebirth following the Middle Ages (14th-17th centuries).',
+                    'industrial revolution': 'The transition from manual labor to mechanized manufacturing that began in Britain in the late 18th century.',
+                    'globalization': 'The process of increased interconnectedness between countries through trade, communication, and cultural exchange.',
+                    'climate': 'The long-term weather patterns in a particular region, influenced by factors like latitude, altitude, and ocean currents.',
+                    'sustainability': 'Meeting present needs without compromising the ability of future generations to meet their own needs.',
+                    'biodiversity': 'The variety of life on Earth, including diversity within species, between species, and of ecosystems.',
+                    
+                    // Technology & Modern World
+                    'internet': 'A global network of interconnected computers that communicate using standardized protocols, enabling worldwide information sharing.',
+                    'blockchain': 'A distributed ledger technology that maintains a continuously growing list of records, linked and secured using cryptography.',
+                    'cryptocurrency': 'Digital or virtual currency secured by cryptography, operating independently of central banks.',
+                    'cybersecurity': 'The practice of protecting systems, networks, and programs from digital attacks and unauthorized access.',
+                    'cloud computing': 'The delivery of computing services over the internet, including storage, processing power, and software applications.',
+                    'quantum computing': 'A type of computation that uses quantum mechanical phenomena to process information in ways classical computers cannot.',
+                    
+                    // Health & Medicine
+                    'immunology': 'The study of the immune system and how the body defends itself against diseases, infections, and foreign substances.',
+                    'genetics': 'The study of heredity and the variation of inherited characteristics, including how traits are passed from parents to offspring.',
+                    'neuroscience': 'The scientific study of the nervous system, including the brain, spinal cord, and networks of nerve cells.',
+                    'nutrition': 'The science of food and its relationship to health, including the study of nutrients and their effects on the body.',
+                    'meditation': 'A practice of focused attention and mindfulness to achieve mental clarity and emotional calm.'
+                };
+
+                // Clean the word (remove spaces, convert to lowercase)
+                const cleanWord = word.replace(/\s+/g, '').toLowerCase();
+
+                if (termExplanations[cleanWord]) {
+                    return termExplanations[cleanWord];
+                }
+
+                // Try partial matches for compound terms
+                for (const [key, value] of Object.entries(termExplanations)) {
+                    if (cleanWord.includes(key) || key.includes(cleanWord)) {
+                        return value;
+                    }
+                }
+
+                // Fallback with intelligent suggestions
+                return `"${word.charAt(0).toUpperCase() + word.slice(1)}" - I can help explain this term or concept. This might be related to a specific field like science, technology, medicine, or business. Feel free to ask more specific questions about it!`;
+            }
+
+            function analyzeQuestion(content) {
+                const lowerContent = content.toLowerCase();
+
+                if (lowerContent.includes('what is') || lowerContent.includes('what are')) {
+                    return 'This is a definitional question. I can help break down concepts, explain terminology, or provide step-by-step explanations of how things work.';
+                } else if (lowerContent.includes('how to') || lowerContent.includes('how do')) {
+                    return 'This is a procedural question asking for instructions or methods. I can provide step-by-step guidance and best practices.';
+                } else if (lowerContent.includes('why')) {
+                    return 'This is asking for reasoning or explanation of causes. I can help explain the underlying principles and rationale.';
+                } else if (lowerContent.includes('when')) {
+                    return 'This is asking about timing or conditions. I can help explain when certain approaches or techniques should be used.';
+                }
+
+                return 'I can help answer your question by breaking it down into understandable parts and providing detailed explanations.';
+            }
+
+            function isConceptOrTopic(content) {
+                const concepts = ['programming', 'coding', 'development', 'software', 'computer', 'technology', 'science', 'math', 'physics', 'biology', 'chemistry', 'engineering', 'design', 'business', 'marketing', 'finance'];
+                return concepts.some(concept => content.includes(concept));
+            }
+
+            function analyzeConcept(content) {
+                return 'This appears to be a topic or concept you want to learn about. I can break down complex subjects into digestible explanations with examples and practical applications.';
+            }
+
+            function analyzeGeneralText(content) {
+                const wordCount = content.split(/\s+/).length;
+                const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+
+                return `This is a text passage with ${wordCount} words and ${sentences} sentences. I can help analyze the content, explain concepts mentioned, or break down complex ideas into simpler terms.`;
+            }
+
+            // Math problem detection and solving
+            function isMathProblem(content) {
+                const mathPatterns = [
+                    /\d+\s*[\+\-\*\/]\s*\d+/,  // Basic arithmetic
+                    /sum of \d+ and \d+/i,      // "sum of 5 and 3"
+                    /\d+\s*\+\s*\d+/,          // "5 + 3"
+                    /\d+\s*\-\s*\d+/,          // "10 - 4"
+                    /\d+\s*\*\s*\d+/,          // "6 * 7"
+                    /\d+\s*\/\s*\d+/,          // "20 / 4"
+                    /what is \d+/i,            // "what is 25"
+                    /calculate.*\d+/i,         // "calculate" with numbers
+                    /solve.*\d+/i,             // "solve" with numbers
+                    /\d+.*calculate/i,         // numbers with "calculate"
+                    /\d+.*solve/i,             // numbers with "solve"
+                    /square root of \d+/i,     // "square root of 25"
+                    /\d+\s*factorial/i,        // "5 factorial"
+                    /factorial of \d+/i,       // "factorial of 5"
+                    /\d+\s*percent/i,          // "25 percent"
+                    /percentage of \d+/i,      // "percentage of 100"
+                ];
+
+                return mathPatterns.some(pattern => pattern.test(content));
+            }
+
+            function solveMathProblem(content) {
+                const lowerContent = content.toLowerCase();
+
+                // Handle "sum of X and Y"
+                const sumMatch = content.match(/sum of (\d+) and (\d+)/i);
+                if (sumMatch) {
+                    const num1 = parseInt(sumMatch[1]);
+                    const num2 = parseInt(sumMatch[2]);
+                    const result = num1 + num2;
+                    return `The sum of ${num1} and ${num2} is ${result}. This is calculated by adding the two numbers together: ${num1} + ${num2} = ${result}.`;
+                }
+
+                // Handle basic arithmetic expressions
+                const arithmeticMatch = content.match(/(\d+)\s*([\+\-\*\/])\s*(\d+)/);
+                if (arithmeticMatch) {
+                    const num1 = parseInt(arithmeticMatch[1]);
+                    const operator = arithmeticMatch[2];
+                    const num2 = parseInt(arithmeticMatch[3]);
+                    let result, operation;
+
+                    switch (operator) {
+                        case '+':
+                            result = num1 + num2;
+                            operation = 'addition';
+                            break;
+                        case '-':
+                            result = num1 - num2;
+                            operation = 'subtraction';
+                            break;
+                        case '*':
+                            result = num1 * num2;
+                            operation = 'multiplication';
+                            break;
+                        case '/':
+                            result = num2 !== 0 ? num1 / num2 : 'undefined (division by zero)';
+                            operation = 'division';
+                            break;
+                    }
+
+                    return `${num1} ${operator} ${num2} = ${result}. This is a ${operation} problem where we ${getOperationExplanation(operator)} ${num1} and ${num2}.`;
+                }
+
+                // Handle "what is X" questions
+                const whatIsMatch = content.match(/what is (\d+)/i);
+                if (whatIsMatch) {
+                    const num = parseInt(whatIsMatch[1]);
+                    return `${num} is a ${getNumberProperties(num)}. ${getNumberFacts(num)}`;
+                }
+
+                return 'This appears to be a math problem. I can help solve arithmetic, explain mathematical concepts, or break down problem-solving steps.';
+            }
+
+            function getOperationExplanation(operator) {
+                switch (operator) {
+                    case '+': return 'add';
+                    case '-': return 'subtract';
+                    case '*': return 'multiply';
+                    case '/': return 'divide';
+                    default: return 'operate on';
+                }
+            }
+
+            function getNumberProperties(num) {
+                const properties = [];
+
+                if (num % 2 === 0) properties.push('even number');
+                else properties.push('odd number');
+
+                if (num > 0) properties.push('positive integer');
+                else if (num < 0) properties.push('negative integer');
+                else properties.push('zero');
+
+                if (isPrime(num)) properties.push('prime number');
+
+                return properties.join(', ');
+            }
+
+            function getNumberFacts(num) {
+                const facts = [];
+
+                if (num <= 10) {
+                    facts.push(`It's a single-digit number.`);
+                } else if (num <= 100) {
+                    facts.push(`It's a two-digit number.`);
+                }
+
+                if (num > 1) {
+                    facts.push(`Its square is ${num * num}.`);
+                }
+
+                if (num > 0 && num <= 12) {
+                    facts.push(`${num}! (factorial) = ${factorial(num)}.`);
+                }
+
+                return facts.join(' ');
+            }
+
+            function isPrime(num) {
+                if (num < 2) return false;
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) return false;
+                }
+                return true;
+            }
+
+            function factorial(n) {
+                if (n <= 1) return 1;
+                return n * factorial(n - 1);
+            }
+
+            function getMathTips(content) {
+                const lowerContent = content.toLowerCase();
+
+                if (lowerContent.includes('+')) {
+                    return [
+                        'Addition combines two or more numbers to get their total',
+                        'You can add numbers in any order (commutative property): 5+3 = 3+5',
+                        'When adding multiple numbers, group them for easier calculation',
+                        'Practice mental math by breaking larger numbers into smaller parts'
+                    ];
+                } else if (lowerContent.includes('-')) {
+                    return [
+                        'Subtraction finds the difference between two numbers',
+                        'Order matters in subtraction: 10-3 ≠ 3-10',
+                        'Think of subtraction as "taking away" or finding "how much more"',
+                        'Check your answer by adding: if 10-3=7, then 7+3 should equal 10'
+                    ];
+                } else if (lowerContent.includes('*') || lowerContent.includes('×')) {
+                    return [
+                        'Multiplication is repeated addition: 4×3 means 4+4+4',
+                        'You can multiply in any order: 4×3 = 3×4',
+                        'Learn multiplication tables for faster calculation',
+                        'Break large numbers: 12×15 = 12×10 + 12×5'
+                    ];
+                } else if (lowerContent.includes('/') || lowerContent.includes('÷')) {
+                    return [
+                        'Division splits a number into equal parts',
+                        'Division is the opposite of multiplication',
+                        'Check division by multiplying: if 20÷4=5, then 5×4=20',
+                        'Remember: you cannot divide by zero!'
+                    ];
+                }
+
+                return [
+                    'Mathematics is about finding patterns and relationships',
+                    'Practice regularly to build confidence with numbers',
+                    'Break complex problems into smaller, manageable steps',
+                    'Always double-check your calculations'
+                ];
+            }
+
+            function analyzeExplanationRequest(content) {
+                const lowerContent = content.toLowerCase();
+
+                if (lowerContent.includes('photosynthesis')) {
+                    return 'Photosynthesis is how plants make food using sunlight. The process involves chlorophyll in leaves capturing light energy, which converts carbon dioxide from air and water from roots into glucose (sugar) and oxygen.';
+                } else if (lowerContent.includes('gravity')) {
+                    return 'Gravity is a fundamental force that attracts objects with mass toward each other. On Earth, it pulls everything toward the center, giving objects weight and keeping us grounded.';
+                } else if (lowerContent.includes('democracy')) {
+                    return 'Democracy is a system of government where power comes from the people. Citizens vote to elect representatives who make decisions on their behalf, ensuring everyone has a voice in how they\'re governed.';
+                }
+
+                return 'I can provide detailed explanations on a wide range of topics including science, technology, history, mathematics, and more. Feel free to ask about specific concepts you\'d like to understand better.';
+            }
+
+            function getRelatedInfo(content) {
+                const lowerContent = content.toLowerCase();
+
+                if (lowerContent.includes('neurologist')) {
+                    return [
+                        'Neurologists treat conditions like epilepsy, stroke, multiple sclerosis, and Parkinson\'s disease',
+                        'They use tools like MRI scans, EEGs, and neurological examinations',
+                        'Related fields include neurosurgery, psychiatry, and neuropsychology',
+                        'Becoming a neurologist requires medical school plus 4+ years of specialized training'
+                    ];
+                } else if (lowerContent.includes('programming') || lowerContent.includes('coding')) {
+                    return [
+                        'Popular programming languages include Python, JavaScript, Java, and C++',
+                        'Key concepts include variables, functions, loops, and data structures',
+                        'Programming is used in web development, mobile apps, AI, and data science',
+                        'Practice with coding challenges and building projects helps improve skills'
+                    ];
+                } else if (lowerContent.includes('machine learning') || lowerContent.includes('ai')) {
+                    return [
+                        'Machine learning includes supervised, unsupervised, and reinforcement learning',
+                        'Common algorithms include neural networks, decision trees, and linear regression',
+                        'Applications include image recognition, natural language processing, and recommendation systems',
+                        'Popular tools include Python libraries like TensorFlow, PyTorch, and scikit-learn'
+                    ];
+                } else if (isMathProblem(content)) {
+                    return [
+                        'I can solve arithmetic problems, explain mathematical concepts, and show step-by-step solutions',
+                        'Try asking about algebra, geometry, calculus, or statistics',
+                        'I can also explain number properties, factorials, and mathematical relationships',
+                        'Math is everywhere - from calculating tips to understanding data science!'
+                    ];
+                }
+
+                // Generic suggestions
+                return [
+                    'I can explain technical concepts in simple terms',
+                    'Feel free to ask follow-up questions for deeper understanding',
+                    'I can provide examples and practical applications',
+                    'Try asking "How does [topic] work?" or "What is [concept]?" for detailed explanations'
+                ];
+            }
+
+            function generateExplanation(content, language, patterns) {
+                let title = "Code Analysis";
+                let sections = [];
+
+                // Always add a basic overview first
+                sections.push({
+                    type: 'overview',
+                    title: '🔍 Content Analysis',
+                    content: getBasicAnalysis(content, language)
+                });
+
+                // Determine what type of code this is
+                if (patterns.recursion.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Recursive Function`;
+                    sections.push({
+                        type: 'overview',
+                        title: '🔄 Recursion Detected',
+                        content: 'This code uses recursion - a function that calls itself to solve smaller subproblems.'
+                    });
+
+                    if (content.toLowerCase().includes('fibonacci')) {
+                        sections.push({
+                            type: 'breakdown',
+                            title: '📝 Fibonacci Logic',
+                            content: [
+                                'Base case: Returns n when n ≤ 1 (stops recursion)',
+                                'Recursive case: Adds fibonacci(n-1) + fibonacci(n-2)',
+                                'Each call creates a tree of smaller function calls',
+                                'Time complexity: O(2^n) - exponential growth'
+                            ]
+                        });
+                    } else if (content.toLowerCase().includes('factorial')) {
+                        sections.push({
+                            type: 'breakdown',
+                            title: '📝 Factorial Logic',
+                            content: [
+                                'Base case: Returns 1 when n ≤ 1',
+                                'Recursive case: Returns n * factorial(n-1)',
+                                'Calculates n! = n × (n-1) × (n-2) × ... × 1',
+                                'Time complexity: O(n) - linear'
+                            ]
+                        });
+                    }
+                } else if (patterns.algorithm.test(content)) {
+                    if (content.toLowerCase().includes('binary') && content.toLowerCase().includes('search')) {
+                        title = `${language.charAt(0).toUpperCase() + language.slice(1)} Binary Search Algorithm`;
+                        sections.push({
+                            type: 'overview',
+                            title: '🎯 Binary Search',
+                            content: 'Efficiently finds a target value in a sorted array by repeatedly dividing the search space in half.'
+                        });
+                        sections.push({
+                            type: 'breakdown',
+                            title: '🔍 Algorithm Steps',
+                            content: [
+                                'Start with left=0, right=array.length-1',
+                                'Calculate middle index: mid = (left + right) / 2',
+                                'Compare target with middle element',
+                                'If target < middle: search left half (right = mid - 1)',
+                                'If target > middle: search right half (left = mid + 1)',
+                                'Repeat until found or search space is empty'
+                            ]
+                        });
+                    } else if (content.toLowerCase().includes('sort')) {
+                        title = `${language.charAt(0).toUpperCase() + language.slice(1)} Sorting Algorithm`;
+                        sections.push({
+                            type: 'overview',
+                            title: '📊 Sorting Detected',
+                            content: 'This code implements a sorting algorithm to arrange elements in order.'
+                        });
+                    }
+                } else if (patterns.loop.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Loop Structure`;
+                    sections.push({
+                        type: 'overview',
+                        title: '🔁 Loop Analysis',
+                        content: 'This code uses loops to repeat operations multiple times.'
+                    });
+
+                    if (content.includes('for')) {
+                        sections.push({
+                            type: 'breakdown',
+                            title: '📝 For Loop Breakdown',
+                            content: [
+                                'Initialization: Sets starting value',
+                                'Condition: Checks if loop should continue',
+                                'Update: Modifies loop variable each iteration',
+                                'Body: Code that executes each time'
+                            ]
+                        });
+                    } else if (content.includes('while')) {
+                        sections.push({
+                            type: 'breakdown',
+                            title: '📝 While Loop Breakdown',
+                            content: [
+                                'Condition: Checked before each iteration',
+                                'Body: Executes while condition is true',
+                                'Update: Must modify condition variable to avoid infinite loop',
+                                'Exit: When condition becomes false'
+                            ]
+                        });
+                    }
+                } else if (patterns.function.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Function Definition`;
+                    sections.push({
+                        type: 'overview',
+                        title: '⚙️ Function Structure',
+                        content: 'This code defines a reusable function that can be called with different inputs.'
+                    });
+                } else if (patterns.class.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Class Definition`;
+                    sections.push({
+                        type: 'breakdown',
+                        title: '🏗️ Object-Oriented Programming',
+                        content: 'This code defines a class - a blueprint for creating objects with properties and methods.'
+                    });
+                } else if (patterns.conditional.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Conditional Logic`;
+                    sections.push({
+                        type: 'breakdown',
+                        title: '🔀 Conditional Statements',
+                        content: 'This code uses conditional statements (if/else) to make decisions based on different conditions.'
+                    });
+                } else if (patterns.array.test(content)) {
+                    title = `${language.charAt(0).toUpperCase() + language.slice(1)} Array/List Operations`;
+                    sections.push({
+                        type: 'breakdown',
+                        title: '📋 Data Structure Usage',
+                        content: 'This code works with arrays or lists to store and manipulate collections of data.'
+                    });
+                } else {
+                    // Fallback for any other content
+                    if (language === 'general') {
+                        title = 'Content Analysis & Explanation';
+                        sections.push({
+                            type: 'breakdown',
+                            title: '📚 Detailed Explanation',
+                            content: getGeneralCodeAnalysis(content, language)
+                        });
+
+                        // Add related concepts or suggestions
+                        sections.push({
+                            type: 'tips',
+                            title: '💡 Related Information',
+                            content: getRelatedInfo(content)
+                        });
+                    } else {
+                        title = `${language.charAt(0).toUpperCase() + language.slice(1)} Code Analysis`;
+                        sections.push({
+                            type: 'breakdown',
+                            title: '🔧 Code Structure',
+                            content: getGeneralCodeAnalysis(content, language)
+                        });
+                    }
+                }
+
+                // Add language-specific insights
+                if (language === 'javascript') {
+                    sections.push({
+                        type: 'tips',
+                        title: '💡 JavaScript Tips',
+                        content: [
+                            'Use const/let instead of var for better scope control',
+                            'Arrow functions (=>) provide cleaner syntax',
+                            'Consider using array methods like map(), filter(), reduce()',
+                            'Modern JS supports async/await for better async code'
+                        ]
+                    });
+                } else if (language === 'python') {
+                    sections.push({
+                        type: 'tips',
+                        title: '🐍 Python Best Practices',
+                        content: [
+                            'Follow PEP 8 style guidelines for clean code',
+                            'Use list comprehensions for concise operations',
+                            'Consider using type hints for better code documentation',
+                            'Use f-strings for string formatting'
+                        ]
+                    });
+                }
+
+                // Always add performance section for algorithms
+                if (patterns.recursion.test(content) || patterns.algorithm.test(content)) {
+                    sections.push({
+                        type: 'performance',
+                        title: '⚡ Performance Analysis',
+                        content: getPerformanceAnalysis(content)
+                    });
+                }
+
+                // Add general learning points
+                sections.push({
+                    type: 'learning',
+                    title: '🎓 Key Learning Points',
+                    content: getLearningPoints(content, language, patterns)
+                });
+
+                return { title, sections };
+            }
+
+            function getPerformanceAnalysis(content) {
+                if (content.toLowerCase().includes('fibonacci') && content.includes('fibonacci(n-1)')) {
+                    return 'Time: O(2^n) - Exponential! Space: O(n) - Call stack depth. Consider dynamic programming or iteration for better performance.';
+                } else if (content.toLowerCase().includes('binary') && content.toLowerCase().includes('search')) {
+                    return 'Time: O(log n) - Very efficient! Space: O(1) - Constant space. Much faster than linear search for large datasets.';
+                } else if (content.toLowerCase().includes('factorial')) {
+                    return 'Time: O(n) - Linear time. Space: O(n) - Recursive call stack. Iterative version would use O(1) space.';
+                } else if (content.includes('for') || content.includes('while')) {
+                    return 'Time: Depends on loop iterations. Space: Usually O(1) unless creating new data structures inside loop.';
+                }
+                return 'Performance depends on the specific operations and data structures used in your code.';
+            }
+
+            function getLearningPoints(content, language, patterns) {
+                const points = [];
+
+                if (patterns.recursion.test(content)) {
+                    points.push('Every recursive function needs a base case to prevent infinite recursion');
+                    points.push('Recursive solutions often mirror the mathematical definition of the problem');
+                    points.push('Consider iterative alternatives for better performance');
+                }
+
+                if (patterns.function.test(content)) {
+                    points.push('Functions promote code reusability and modularity');
+                    points.push('Good function names should describe what the function does');
+                    points.push('Keep functions small and focused on a single task');
+                }
+
+                if (patterns.loop.test(content)) {
+                    points.push('Always ensure loop conditions will eventually become false');
+                    points.push('Consider using built-in iteration methods when available');
+                    points.push('Be mindful of loop performance with large datasets');
+                }
+
+                if (language === 'javascript') {
+                    points.push('JavaScript is dynamically typed - be careful with type coercion');
+                    points.push('Understand the difference between == and === for comparisons');
+                } else if (language === 'python') {
+                    points.push('Python emphasizes readability - "code is read more than written"');
+                    points.push('Indentation is part of the syntax in Python');
+                }
+
+                if (points.length === 0) {
+                    points.push('Break down complex problems into smaller, manageable pieces');
+                    points.push('Write code that is easy to read and understand');
+                    points.push('Test your code with different inputs to ensure it works correctly');
+                }
+
+                return points;
+            }
+
+            function formatExplanation(analysis) {
+                let html = `<div class="space-y-4">`;
+
+                analysis.sections.forEach(section => {
+                    let bgColor, borderColor, textColor, titleColor;
+
+                    switch (section.type) {
+                        case 'overview':
+                            bgColor = 'bg-blue-50 dark:bg-blue-900/20';
+                            borderColor = 'border-blue-500';
+                            textColor = 'text-blue-800 dark:text-blue-200';
+                            titleColor = 'text-blue-900 dark:text-blue-100';
+                            break;
+                        case 'breakdown':
+                            bgColor = 'bg-gray-50 dark:bg-gray-700';
+                            borderColor = 'border-gray-500';
+                            textColor = 'text-gray-700 dark:text-gray-300';
+                            titleColor = 'text-gray-900 dark:text-white';
+                            break;
+                        case 'performance':
+                            bgColor = 'bg-yellow-50 dark:bg-yellow-900/20';
+                            borderColor = 'border-yellow-500';
+                            textColor = 'text-yellow-800 dark:text-yellow-200';
+                            titleColor = 'text-yellow-900 dark:text-yellow-100';
+                            break;
+                        case 'tips':
+                            bgColor = 'bg-purple-50 dark:bg-purple-900/20';
+                            borderColor = 'border-purple-500';
+                            textColor = 'text-purple-800 dark:text-purple-200';
+                            titleColor = 'text-purple-900 dark:text-purple-100';
+                            break;
+                        case 'learning':
+                            bgColor = 'bg-green-50 dark:bg-green-900/20';
+                            borderColor = 'border-green-500';
+                            textColor = 'text-green-800 dark:text-green-200';
+                            titleColor = 'text-green-900 dark:text-green-100';
+                            break;
+                        default:
+                            bgColor = 'bg-gray-50 dark:bg-gray-700';
+                            borderColor = 'border-gray-500';
+                            textColor = 'text-gray-700 dark:text-gray-300';
+                            titleColor = 'text-gray-900 dark:text-white';
+                    }
+
+                    html += `<div class="${bgColor} p-4 rounded-lg border-l-4 ${borderColor}">`;
+                    html += `<h3 class="font-semibold ${titleColor} mb-2">${section.title}</h3>`;
+
+                    if (Array.isArray(section.content)) {
+                        html += `<ol class="list-decimal list-inside space-y-1 ${textColor}">`;
+                        section.content.forEach(item => {
+                            html += `<li>${item}</li>`;
+                        });
+                        html += `</ol>`;
+                    } else {
+                        html += `<p class="${textColor}">${section.content}</p>`;
+                    }
+
+                    html += `</div>`;
+                });
+
+                html += `</div>`;
+                return html;
+            }
+
+            // Example content
+            const examples = {
+                javascript: `function fibonacci(n) {
+    return n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2);
+}`,
+                python: `def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1`,
+                concept: `class Calculator:
+    def __init__(self):
+        self.history = []
+    
+    def add(self, a, b):
+        result = a + b
+        self.history.append(f"{a} + {b} = {result}")
+        return result`
+            };
+
+            // DOM elements
+            const html = document.documentElement;
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                html.classList.add('dark');
+            }
+
+            function toggleDarkMode() {
+                html.classList.toggle('dark');
+                const theme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+            }
+
+            function showAppPage(push = true) {
+    document.getElementById('landingPage').classList.add('hidden');
+    document.getElementById('appPage').classList.remove('hidden');
+    if (push) history.pushState({ page: 'app' }, '', '#app');
+}
+
+function showLandingPage(push = true) {
+    document.getElementById('appPage').classList.add('hidden');
+    document.getElementById('landingPage').classList.remove('hidden');
+    if (push) history.pushState({ page: 'home' }, '', '#home');
+}
+
+
+            function simulateExplanation(content) {
+                const outputArea = document.getElementById('outputArea');
+                const loadingState = document.getElementById('loadingState');
+                const explainBtn = document.getElementById('explainBtn');
+                const btnText = document.getElementById('btnText');
+
+                // Show loading
+                outputArea.classList.add('hidden');
+                loadingState.classList.remove('hidden');
+                explainBtn.disabled = true;
+                btnText.textContent = 'Analyzing...';
+
+                // Simulate processing time
+                setTimeout(() => {
+                    // Analyze the actual content
+                    const analysis = analyzeContent(content);
+                    const explanationHtml = formatExplanation(analysis);
+
+                    loadingState.classList.add('hidden');
+                    outputArea.classList.remove('hidden');
+                    outputArea.innerHTML = `
+                    <div class="animate-fade-in">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">${analysis.title}</h3>
+                        ${explanationHtml}
+                        <div class="mt-6 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                <strong>💡Tip:</strong> This intelligent analysis was generated by examining your code's patterns, structure, and language. In a real implementation, this would connect to advanced Kiro AI models for even deeper insights.
+                            </p>
+                        </div>
+                    </div>
+                `;
+
+                    explainBtn.disabled = false;
+                    btnText.textContent = 'Explain with Kiro AI';
+                }, 1500 + Math.random() * 1000); // Random delay 1.5-2.5 seconds
+            }
+                    window.addEventListener('popstate', function () {
+                if (location.hash === '#app') showAppPage(false);
+                else showLandingPage(false);
+            });
+            // Event listeners
+            document.addEventListener('DOMContentLoaded', function () {
+                if (location.hash === '#app') showAppPage(false);
+                else showLandingPage(false);
+
+                // Navigation
+                document.getElementById('startLearningBtn').addEventListener('click', showAppPage);
+                document.getElementById('backToHomeBtn').addEventListener('click', showLandingPage);
+
+                // Dark mode
+                document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+                document.getElementById('darkModeToggleApp').addEventListener('click', toggleDarkMode);
+
+                // App functionality
+                const inputText = document.getElementById('inputText');
+                const explainBtn = document.getElementById('explainBtn');
+                const clearBtn = document.getElementById('clearBtn');
+                const exampleBtn = document.getElementById('exampleBtn');
+                const exampleBtns = document.querySelectorAll('.example-btn');
+
+                explainBtn.addEventListener('click', () => {
+                    const content = inputText.value.trim();
+                    if (!content) {
+                        alert('Please enter some content to explain!');
+                        return;
+                    }
+                    simulateExplanation(content);
+                });
+
+                clearBtn.addEventListener('click', () => {
+                    inputText.value = '';
+                    document.getElementById('outputArea').innerHTML = `
+                    <div class="text-center py-12 text-gray-500 dark:text-gray-400">
+                        <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                        <p class="text-lg">Ready to help you learn!</p>
+                        <p class="text-sm mt-2">Paste your content and click "Explain with Kiro AI" to get started.</p>
+                    </div>
+                `;
+                });
+
+                exampleBtn.addEventListener('click', () => {
+                    inputText.value = examples.javascript;
+                });
+
+                exampleBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const exampleType = btn.dataset.example;
+                        inputText.value = examples[exampleType];
+                    });
+                });
+
+                // Enter key to submit
+                inputText.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'Enter') {
+                        explainBtn.click();
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>
