@@ -1,0 +1,10 @@
+project: AI Tutor - AI Learning Companion
+description: >
+  Educational AI web app that explains code and problems step-by-step using Kiro.
+features:
+  - Instant explanations of code or problems
+  - Multi-language support (Python, JavaScript, etc.)
+  - Interactive UI with smooth animations
+usage_with_kiro:
+  - Built initial HTML structure with Kiro spec-to-code
+  - Automated explanation logic via hooks
