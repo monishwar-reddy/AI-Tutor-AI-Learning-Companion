@@ -1,0 +1,4 @@
+{
+  "onBuild": "echo 'Building project with Kiro...'",
+  "onDeploy": "echo 'Deploying project via GitHub Pages...'"
+}
