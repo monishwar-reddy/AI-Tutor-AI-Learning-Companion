@@ -1,6 +1,8 @@
 # 🚀 AI Tutor – AI Learning Companion
 
 **Hackathon Project 2025** | *Learn Smarter with AI*
+**Try it**
+https://monishwar-reddy.github.io/AI-Tutor-AI-Learning-Companion/
 
 ## 📖 Project Overview
 
